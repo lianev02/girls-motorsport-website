@@ -8,7 +8,7 @@
     --color-gray-transparency: #d7cac6bd;
     --color-gray-text: #594c4a;
     --color-champagne: #F2E4DC;
-    --color-accent: #AEE7F6;
+    --color-white: #FFF8F4;
     
     /* FONTS */
     --font-display: "ivypresto-display", serif;
@@ -217,6 +217,8 @@ section .container{
     font-weight: 500;
     font-style: normal;
     text-transform: uppercase;
+
+    width: fit-content;
 }
 
 .button-primary{
@@ -318,12 +320,19 @@ section .container{
     text-align: center; 
 }
 
+.feature-centered a{
+    align-items: center;
+    margin-inline: auto;  /* This helped me centered the button */
+   
+}
+
 
 
 .button-group{
     display: flex;
     gap: var(--space-2);
     justify-content: center;
+    margin-inline: auto;
 }
 
 /* SECTION WITH COLUMNS AND FEATURE CARDS */
@@ -333,6 +342,14 @@ section .container{
     gap: var(--space-4);
 
     margin-top: var(--space-5);
+}
+
+.feature-card img{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+
 }
 
 
@@ -421,6 +438,14 @@ blockquote footer {
     overflow: hidden;
 }
 
+.content-carousel img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
 .carousel-text{
     position: absolute;
     inset: 0;
@@ -466,6 +491,12 @@ blockquote footer {
   padding: var(--space-3);
   background-color: var(--color-gray);  
 
+}
+
+
+.stat-card:hover{
+    mix-blend-mode: difference;
+    background-color: var(--color-primary-pink-dark);
 }
 
 .stat-number {
@@ -515,42 +546,89 @@ blockquote footer {
   font-weight: bold;
   color: var(--color-primary-pink);
   text-transform: uppercase;
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   
 }
-
 
 .story-content /* Wraps image + text */ {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  align-items: start;
 }
 
-/* Image styling */
+/* image styles */
+.story-image{
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+}
 .story-image img {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
   object-fit: cover;
 }
 
-/* Text block */
+/* text block story card */
 .story-title {
-  font-size: 1.25rem;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-}
-
-.story-title em {
-  font-family: var(--font-display);
-  font-weight: 100;
-  color: #000;
-  padding: 0.2em 0.4em;
+    font-size: 1.25rem;
+    font-family: var(--font-display);
+    font-weight: 100;
+    margin-bottom: 0.5rem;
+    color: var(--color-black)
 }
 
 .story-preview {
   font-size: 0.95rem;
   line-height: 1.4;
+}
+
+
+/* CONTACT FORM SECTION */
+
+.contact-section {
+  padding: var(--space-5) var(--space-2);
+  
+}
+
+.contact-form, 
+.user-group{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+  width: 100%;
+}
+
+.form-group{
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 1rem;
+  margin-bottom: var(--space-1);
+}
+
+input,
+textarea {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: var(--space-2);
+  border: none;
+  background-color: var(--color-white);
+  color: var(--color-black);
+  
+  resize: vertical;
+}
+
+input:focus,
+textarea:focus {
+  outline: 0.75px solid var(--color-gray-text);
+}
+
+.full-width {
+  grid-column: 1 / -1;
 }
 
 
@@ -742,6 +820,24 @@ ul.footer-socials li{
         justify-content: center;
     }
 
+    /* FORM TABLET VERSION */
+
+    .form-grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-5);
+        align-items: start;
+    }
+
+    form{
+        margin-top: var(--space-5);
+    }
+
+    .user-group{
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-4);
+    }
+
     /* FOOTER TABLET VERSION */
     .footer-content{
         display: grid;
@@ -776,8 +872,6 @@ ul.footer-socials li{
     .stats-grid {
         grid-template-columns: repeat(3, 1fr);
     }
-
-
  
       
 }
@@ -925,6 +1019,25 @@ ul.footer-socials li{
         flex-direction: column;
         justify-content: center;
     }
+
+    /* FORM  DESKTOP VERSION */
+
+    .form-grid{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: var(--space-5);
+        align-items: start;
+    }
+
+    form{
+        margin-top: var(--space-5);
+    }
+
+    .user-group{
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-5);
+    }
+
 
     /* FOOTER DESKTOP VERSION */
     .footer-content{

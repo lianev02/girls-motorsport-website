@@ -274,7 +274,7 @@ section .container{
 .hero-title{
     font-family: var(--font-display);
     color: var(--color-primary-pink);
-    font-size: clamp(5rem, 10vw, 9rem);
+    font-size: clamp(4rem, 10vw, 9rem);
     /* text-transform: uppercase; */
     line-height: 3.75rem;
     text-align: center;
@@ -737,6 +737,7 @@ ul.footer-socials li{
         grid-area: title;
         grid-column: 1 / -1; 
         /* Used grid-column so that the title behaves as expected. It tells a grid item which columns to span, horizontally, in a grid container.*/
+        line-height: 5rem;
     }
     
     .hero-image{

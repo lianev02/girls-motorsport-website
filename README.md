@@ -13,4 +13,6 @@ This website was created as part of a personal passion project to:
 - No JavaScript (fully CSS-based interactions)
 - **Font**: Field Gothic (via Adobe Fonts)
 
+Note: all the images were downloaded from the web. I do not own any of them. 
+
 
